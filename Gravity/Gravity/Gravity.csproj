@@ -77,6 +77,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pendulum.cs" />
     <Compile Include="PendulumResultWindow.xaml.cs">
       <DependentUpon>PendulumResultWindow.xaml</DependentUpon>
     </Compile>
