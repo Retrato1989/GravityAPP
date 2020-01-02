@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gravity"
         mc:Ignorable="d"
-        Title="PendulumResultWindow" Height="450" Width="800">
+        Title="Wahadło matematyczne - wyniki"  MinHeight="280" MaxHeight="600" Height="360" MinWidth="280" MaxWidth="900" Width="360">
     <Grid>
-        
+        <DataGrid>
+            
+        </DataGrid>
     </Grid>
 </Window>

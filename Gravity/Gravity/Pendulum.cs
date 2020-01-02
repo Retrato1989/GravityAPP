@@ -14,14 +14,14 @@ namespace Gravity
 		double PendulumSwingCycle { get; set; }
 		double PendulumMeasuredG { get; set; }
 
-		string PendulumCreator { get; set; }
+		string PendulumAuthors { get; set; }
 
-		public Pendulum(double length, double time, int swings, string creator)
+		public Pendulum(double length, double time, int swings, string authors)
 		{
 			this.PendulumLength = length;
 			this.PendulumSwingTime = time;
 			this.PendulumSwingCount = swings;
-			this.PendulumCreator = creator;
+			this.PendulumAuthors = authors;
 			this.PendulumSwingCycle = SetMeasureSwingCycle(this);
 			this.PendulumMeasuredG = MeasureG(this);
 		}
@@ -49,7 +49,7 @@ namespace Gravity
 		public string Result(Pendulum pendulum)
 		{
 			string result;
-			result = String.Format("{0}:\nOkres wahadła wynosi{1:F2}s. Zmierzone przyspieszenie grawitacyjne wyniosło {1:F2}m/s^2.", pendulum.PendulumCreator, pendulum.PendulumSwingCycle, pendulum.PendulumMeasuredG);
+			result = String.Format("{0}:\nOkres wahadła wynosi{1:F2}s. Zmierzone przyspieszenie grawitacyjne wyniosło {1:F2}m/s^2.", pendulum.PendulumAuthors, pendulum.PendulumSwingCycle, pendulum.PendulumMeasuredG);
 			return result;
 		}
 	}
