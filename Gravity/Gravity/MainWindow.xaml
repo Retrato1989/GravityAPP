@@ -8,8 +8,8 @@
         Title="Układ Słoneczny" MinHeight="280" MaxHeight="600" Height="360" MinWidth="280" MaxWidth="900" Width="360">
     <Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="80" Width="240">
-            <Button Content="Wahadło" HorizontalAlignment="Left" Height="60" Width="100" Margin="10,0"/>
-            <Button Content="Wiek i waga" HorizontalAlignment="Right" Height="60" Width="100" Margin="10,0"/>
+            <Button Content="Wahadło" HorizontalAlignment="Left" Height="60" Width="100" Margin="10,0" Click="btnPendulum_Click"/>
+            <Button Content="Wiek i waga" HorizontalAlignment="Right" Height="60" Width="100" Margin="10,0" Click="btnAgeAndWeight_Click"/>
         </StackPanel>
     </Grid>
 </Window>

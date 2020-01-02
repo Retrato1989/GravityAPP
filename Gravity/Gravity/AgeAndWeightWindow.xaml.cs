@@ -68,6 +68,9 @@ namespace Gravity
 
 		void btnWyniki_Click(object sender, RoutedEventArgs e)
 		{
+			AgeAndWeightResultWindow ageAndWeightResult = new AgeAndWeightResultWindow();
+			ageAndWeightResult.Show();
+
 			if (!string.IsNullOrEmpty(log.ShowAllResults()))
 			{
 				MessageBox.Show(log.ShowAllResults(), "Lista wyników", MessageBoxButton.OK);

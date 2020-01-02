@@ -12,6 +12,18 @@ namespace Gravity
         {
             InitializeComponent();
         }
+
+        private void btnPendulum_Click(object sender, RoutedEventArgs e)
+        {
+            PendulumWindow pendulumWindow = new PendulumWindow();
+            pendulumWindow.Show();
+        }
+
+        private void btnAgeAndWeight_Click(object sender, RoutedEventArgs e)
+        {
+            AgeAndWeightWindow ageAndWeightWindow = new AgeAndWeightWindow();
+            ageAndWeightWindow.Show();
+        }
     }
     /*
     *  Przerzucić zasoby do app (np lista użytkowników)
