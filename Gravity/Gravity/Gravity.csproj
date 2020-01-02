@@ -55,6 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AgeAndWeightResultWindow.xaml.cs">
+      <DependentUpon>AgeAndWeightResultWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs" />
+    <Compile Include="Planet.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserResult.cs" />
     <Page Include="AgeAndWeightResultWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -67,9 +74,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AgeAndWeightResultWindow.xaml.cs">
-      <DependentUpon>AgeAndWeightResultWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AgeAndWeightWindow.xaml.cs">
       <DependentUpon>AgeAndWeightWindow.xaml</DependentUpon>
     </Compile>
