@@ -55,28 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AgeAndWeightResultWindow.xaml.cs">
-      <DependentUpon>AgeAndWeightResultWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Log.cs" />
     <Compile Include="Planet.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserResult.cs" />
-    <Page Include="AgeAndWeightResultWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AgeAndWeightWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AgeAndWeightWindow.xaml.cs">
-      <DependentUpon>AgeAndWeightWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -85,23 +71,9 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PendulumResultWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PendulumWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pendulum.cs" />
-    <Compile Include="PendulumResultWindow.xaml.cs">
-      <DependentUpon>PendulumResultWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PendulumWindow.xaml.cs">
-      <DependentUpon>PendulumWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
