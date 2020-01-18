@@ -7,9 +7,125 @@
         mc:Ignorable="d"
         Title="Układ Słoneczny" MinHeight="280" MaxHeight="600" Height="360" MinWidth="280" MaxWidth="900" Width="360">
     <Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="80" Width="240">
-            <Button Content="Wahadło" HorizontalAlignment="Left" Height="60" Width="100" Margin="10,0"/>
-            <Button Content="Wiek i waga" HorizontalAlignment="Right" Height="60" Width="100" Margin="10,0"/>
-        </StackPanel>
+        <Grid.Resources>
+            <Style x:Key="customButton">
+                <Setter Property="Button.Background" Value="LightSkyBlue" />
+                <Setter Property="Button.FontWeight" Value="Bold" />
+                <Setter Property="Button.FontFamily" Value="Calibri" />
+                <Setter Property="Button.BorderBrush" Value="Black" />
+                <Setter Property="Button.BorderThickness" Value="2" />
+                <Setter Property="Button.Height" Value="23" />
+            </Style>
+            <Style x:Key="customLabel">
+                <Setter Property="Label.HorizontalContentAlignment" Value="Right" />
+                <Setter Property="Label.VerticalContentAlignment" Value="Center" />
+                <Setter Property="Label.Height" Value="26" />
+            </Style>
+            <Style x:Key="customTextBox">
+                <Setter Property="TextBox.VerticalContentAlignment" Value="Center" />
+                <Setter Property="TextBox.TextAlignment" Value="Right" />
+                <Setter Property="TextBox.Height" Value="20" />
+            </Style>
+            <Style x:Key="customComboBox">
+                <Setter Property="ComboBox.HorizontalContentAlignment" Value="Center" />
+                <Setter Property="ComboBox.VerticalContentAlignment" Value="Center" />
+                <Setter Property="ComboBox.Height" Value="23" />
+            </Style>
+        </Grid.Resources>
+        <TabControl>
+            <TabItem Header="Wahadło">
+                <TabControl TabStripPlacement="Bottom">
+                    <TabItem Header="Oblicz">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="60" />
+                                <ColumnDefinition Width="140" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="32" />
+                                <RowDefinition Height="32" />
+                                <RowDefinition Height="32" />
+                                <RowDefinition Height="32" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Autorzy" Grid.Row="1" Grid.Column="1" Style="{StaticResource customLabel}" />
+                            <Label Content="Długość" Grid.Row="2" Grid.Column="1" Style="{StaticResource customLabel}" />
+                            <Label Content="Czas" Grid.Row="3" Grid.Column="1" Style="{StaticResource customLabel}" />
+                            <TextBox Name="txtAutorzy" Grid.Column="2" Grid.Row="1" Style="{StaticResource customTextBox}" />
+                            <TextBox Name="txtDlugosc" Grid.Column="2" Grid.Row="2" Style="{StaticResource customTextBox}" />
+                            <TextBox Name="txtCzas" Grid.Column="2" Grid.Row="3" Style="{StaticResource customTextBox}" />
+                            <Button	Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" />
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Wyniki">
+                        <DataGrid x:Name="PendulumResults" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Autorzy" Binding="{Binding Authors}" />
+                                <DataGridTextColumn Header="Wynik" Binding="{Binding Result}" />
+                                <DataGridTextColumn Header="Różnica" Binding="{Binding Difference}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </TabItem>
+                    <TabItem Header="Ustawienia">
+                        <StackPanel Orientation="Horizontal" Height="32" VerticalAlignment="Top">
+                            <CheckBox Content="Koloruj listę wyników" IsChecked="False" Width="140" VerticalContentAlignment="Center"/>
+                            <Button Content="Wyczyść listę" Width="80" Style="{StaticResource customButton}" />
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+            <TabItem Header="Wiek i Waga">
+                <TabControl TabStripPlacement="Bottom">
+                    <TabItem Header="Oblicz">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="60" />
+                                <ColumnDefinition Width="140" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="32" />
+                                <RowDefinition Height="32" />
+                                <RowDefinition Height="32" />
+                                <RowDefinition Height="32" />
+                                <RowDefinition Height="32" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Imię" Grid.Row="1" Grid.Column="1" Style="{StaticResource customLabel}" />
+                            <Label Content="Wiek" Grid.Row="2" Grid.Column="1" Style="{StaticResource customLabel}" />
+                            <Label Content="Waga" Grid.Row="3" Grid.Column="1" Style="{StaticResource customLabel}" />
+                            <Label Content="Planeta" Grid.Row="4" Grid.Column="1" Style="{StaticResource customLabel}" />
+                            <TextBox Name="txtImie" Grid.Column="2" Grid.Row="1" ToolTip="Podaj swoje imię" Style="{StaticResource customTextBox}" />
+                            <TextBox Name="txtWiek" Grid.Column="2" Grid.Row="2" ToolTip="Podaj swój wiek na Ziemi" Style="{StaticResource customTextBox}" />
+                            <TextBox Name="txtWaga" Grid.Column="2" Grid.Row="3" ToolTip="Podaj swoją wagę na Ziemi" Style="{StaticResource customTextBox}" />
+                            <ComboBox x:Name="cmbPlanets" Grid.Column="2" Grid.Row="4" DisplayMemberPath="PlanetName" ToolTip="Wybierz planetę Układu Słonecznego" Style="{StaticResource customComboBox}" />
+                            <Button	Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" />
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Wyniki">
+                        <DataGrid x:Name="AgeAndWeightResults" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Imię" Binding="{Binding Name}" />
+                                <DataGridTextColumn Header="Wiek" Binding="{Binding Age}" />
+                                <DataGridTextColumn Header="Waga" Binding="{Binding Weight}" />
+                                <DataGridTextColumn Header="Planeta" Binding="{Binding Planet}" />
+                                <DataGridTextColumn Header="Wynik" Binding="{Binding Result}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </TabItem>
+                    <TabItem Header="Ustawienia">
+                        <StackPanel Orientation="Horizontal" Height="32" VerticalAlignment="Top">
+                            <CheckBox Content="Koloruj listę wyników" IsChecked="False" Width="140" VerticalContentAlignment="Center"/>
+                            <Button Content="Wyczyść listę" Width="80" Style="{StaticResource customButton}" />
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
