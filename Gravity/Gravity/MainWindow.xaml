@@ -9,10 +9,8 @@
     <Grid>
         <Grid.Resources>
             <Style x:Key="customButton">
-                <Setter Property="Button.Background" Value="LightSkyBlue" />
+                <Setter Property="Button.Background" Value="WhiteSmoke" />
                 <Setter Property="Button.FontWeight" Value="Bold" />
-                <Setter Property="Button.FontFamily" Value="Calibri" />
-                <Setter Property="Button.BorderBrush" Value="Black" />
                 <Setter Property="Button.BorderThickness" Value="2" />
                 <Setter Property="Button.Height" Value="23" />
             </Style>
@@ -25,11 +23,17 @@
                 <Setter Property="TextBox.VerticalContentAlignment" Value="Center" />
                 <Setter Property="TextBox.TextAlignment" Value="Right" />
                 <Setter Property="TextBox.Height" Value="20" />
+                <Setter Property="TextBox.BorderThickness" Value="2" />
             </Style>
             <Style x:Key="customComboBox">
                 <Setter Property="ComboBox.HorizontalContentAlignment" Value="Center" />
                 <Setter Property="ComboBox.VerticalContentAlignment" Value="Center" />
                 <Setter Property="ComboBox.Height" Value="23" />
+                <Setter Property="ComboBox.BorderThickness" Value="2" />
+            </Style>
+            <Style x:Key="customCheckBox">
+                <Setter Property="CheckBox.VerticalContentAlignment" Value="Center" />
+                <Setter Property="CheckBox.BorderThickness" Value="2" />
             </Style>
         </Grid.Resources>
         <TabControl>
@@ -71,7 +75,7 @@
                     </TabItem>
                     <TabItem Header="Ustawienia">
                         <StackPanel Orientation="Horizontal" Height="32" VerticalAlignment="Top">
-                            <CheckBox Content="Koloruj listę wyników" IsChecked="False" Width="140" VerticalContentAlignment="Center"/>
+                            <CheckBox Content="Koloruj listę wyników" IsChecked="False" Width="140" Style="{StaticResource customCheckBox}"/>
                             <Button Content="Wyczyść listę" Width="80" Style="{StaticResource customButton}" />
                         </StackPanel>
                     </TabItem>
@@ -120,7 +124,7 @@
                     </TabItem>
                     <TabItem Header="Ustawienia">
                         <StackPanel Orientation="Horizontal" Height="32" VerticalAlignment="Top">
-                            <CheckBox Content="Koloruj listę wyników" IsChecked="False" Width="140" VerticalContentAlignment="Center"/>
+                            <CheckBox Content="Koloruj listę wyników" IsChecked="False" Width="140" Style="{StaticResource customCheckBox}" />
                             <Button Content="Wyczyść listę" Width="80" Style="{StaticResource customButton}" />
                         </StackPanel>
                     </TabItem>
