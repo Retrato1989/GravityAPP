@@ -55,10 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Log.cs" />
+    <Compile Include="AgeAndWeight.cs" />
     <Compile Include="Planet.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="UserResult.cs" />
+    <Compile Include="ResultAgeAndWeight.cs" />
+    <Compile Include="ResultPendulum.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pendulum.cs" />
+    <Compile Include="PlanetEarth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -1,15 +1,12 @@
 ﻿using System;
 
 namespace Gravity
-{	public class Planet
+{
+	public class Planet
 	{
-		public string PlanetName { get; set; }
-		public double OrbitalPeriod { get; set; }
-		public double PlanetGravity { get; set; }
-
-		public Planet()
-		{
-		}
+		string PlanetName { get; set; }
+		double OrbitalPeriod { get; set; }
+		double PlanetGravity { get; set; }
 
 		public Planet(string planetName, double orbitalPeriod, double planetGravity)
 		{
@@ -18,16 +15,15 @@ namespace Gravity
 			this.PlanetGravity = planetGravity;
 		}
 
-
 		public double YearLength()
 		{
-			double yearLength = 365.26 / OrbitalPeriod;
+			double yearLength = Math.Round(PlanetEarth.YearLength / OrbitalPeriod, 2);
 			return yearLength;
 		}
 
 		public double CompareGravity()
 		{
-			double gravity = PlanetGravity / 9.80;
+			double gravity = Math.Round(PlanetGravity / PlanetEarth.EarthG, 2);
 			return gravity;
 		}
 	}
