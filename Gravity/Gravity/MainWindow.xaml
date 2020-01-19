@@ -112,10 +112,10 @@
                         </Grid>
                     </TabItem>
                     <TabItem Header="Wyniki">
-                        <DataGrid x:Name="AgeAndWeightResults" ItemsSource="{Binding}" AutoGenerateColumns="False" >
+                        <DataGrid Name="gridAgeAndWeightResults" AutoGenerateColumns="False" >
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Imię" Binding="{Binding Name}" />
-                                <DataGridTextColumn Header="Planeta" Binding="{Binding SelectedPlanet}" />
+                                <DataGridTextColumn Header="Planeta" Binding="{Binding PlanetName}" />
                                 <DataGridTextColumn Header="Wiek" Binding="{Binding ResultAge}" />
                                 <DataGridTextColumn Header="Waga" Binding="{Binding ResultWeight}" />
                             </DataGrid.Columns>

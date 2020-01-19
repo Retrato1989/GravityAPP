@@ -4,7 +4,8 @@ namespace Gravity
 {
 	public class Planet
 	{
-		string PlanetName { get; set; }
+		public string PlanetName { get; set; }
+
 		double OrbitalPeriod { get; set; }
 		double PlanetGravity { get; set; }
 
