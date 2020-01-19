@@ -4,32 +4,41 @@ namespace Gravity
 {
 	public class Pendulum
 	{
-		double PendulumLength { get; set; }
-		double PendulumSwingTime { get; set; }
-		double PendulumSwingCycle { get; set; }
+		double Length { get; set; }
+		double SwingTime { get; set; }
+		double SwingCycle { get; set; }
 
-		public string PendulumAuthors { get; set; }
-		public double PendulumMeasuredG { get; set; }
+		public string Authors { get; set; }
+		public double MeasuredG { get; set; }
+		public double Difference { get; set; }
 
+		public Pendulum()
+		{
+		}
 		public Pendulum(string authors, double length, double time)
 		{
-			this.PendulumAuthors = authors;
-			this.PendulumLength = length;
-			this.PendulumSwingTime = time;
-			this.PendulumSwingCycle = MeasureSwingCycle(this);
-			this.PendulumMeasuredG = MeasureG(this);
+			this.Authors = authors;
+			this.Length = length;
+			this.SwingTime = time;
+
+			MeasureSwingCycle();
+			MeasureG();
+			MeasureDifference();
 		}
 
-		double MeasureSwingCycle(Pendulum pendulum)
+		private void MeasureSwingCycle()
 		{
-			double swingCycle = Math.Round(Math.Pow(pendulum.PendulumSwingTime / 10, 2), 2);
-			return swingCycle;
+			this.SwingCycle = Math.Round(Math.Pow(SwingTime / 10, 2), 2);
 		}
 
-		double MeasureG(Pendulum pendulum)
+		private void MeasureG()
 		{
-			double measuredG = Math.Round(4 * Math.Round(Math.PI, 2) * pendulum.PendulumLength / Math.Pow(pendulum.PendulumSwingCycle, 2), 2);
-			return measuredG;
+			this.MeasuredG = Math.Round(4 * Math.Round(Math.PI, 2) * Length / Math.Pow(SwingCycle, 2), 2);
+		}
+
+		private void MeasureDifference()
+		{
+			this.Difference = Math.Abs(this.MeasuredG - PlanetEarth.EarthG);
 		}
 	}
 }

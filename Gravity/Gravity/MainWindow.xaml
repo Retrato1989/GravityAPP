@@ -61,11 +61,11 @@
                             <TextBox Name="txtAutorzy" Grid.Column="2" Grid.Row="1" Style="{StaticResource customTextBox}" />
                             <TextBox Name="txtDlugosc" Grid.Column="2" Grid.Row="2" Style="{StaticResource customTextBox}" />
                             <TextBox Name="txtCzas" Grid.Column="2" Grid.Row="3" Style="{StaticResource customTextBox}" />
-                            <Button	Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" />
+                            <Button	Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" Click="btnWahadloOblicz_Click"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Wyniki">
-                        <DataGrid x:Name="PendulumResults" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                        <DataGrid Name="gridPendulumResults" AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Autorzy" Binding="{Binding Authors}" />
                                 <DataGridTextColumn Header="Wynik" Binding="{Binding MeasuredG}" />
