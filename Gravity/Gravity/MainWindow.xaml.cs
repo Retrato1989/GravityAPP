@@ -43,7 +43,7 @@ namespace Gravity
 			resultsPendulum.Add(p);
 		}
 
-		private void btnWiekIWagaOblicz_Click(object sendner, RoutedEventArgs e)
+		private void btnWiekIWagaOblicz_Click(object sender, RoutedEventArgs e)
 		{
 			AgeAndWeight a = new AgeAndWeight(txtImie.Text, Convert.ToDouble(txtWiek.Text), Convert.ToDouble(txtWaga.Text), planet);
 			resultsAgeAndWeight.Add(a);
