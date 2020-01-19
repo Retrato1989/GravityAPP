@@ -8,6 +8,10 @@ namespace Gravity
 		double MeasuredG { get; set; }
 		double Difference { get; set; }
 
+		public ResultPendulum()
+		{
+
+		}
 		public ResultPendulum(Pendulum pendulum)
 		{
 			this.Authors = pendulum.PendulumAuthors;

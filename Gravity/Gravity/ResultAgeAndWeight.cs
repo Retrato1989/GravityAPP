@@ -9,6 +9,10 @@ namespace Gravity
 		double ResultAge { get; set; }
 		double ResultWeight { get; set; }
 
+		public ResultAgeAndWeight()
+		{
+
+		}
 		public ResultAgeAndWeight(AgeAndWeight ageAndWeight)
 		{
 			this.Name = ageAndWeight.Name;
