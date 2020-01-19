@@ -53,5 +53,14 @@ namespace Gravity
 		{
 			planet = cmbPlanets.SelectedItem as Planet;
 		}
+
+		private void btnWahadloWyczysc_Click(object sender, RoutedEventArgs e)
+		{
+			resultsPendulum.Clear();
+		}
+		private void btnWiekIWagaWyczysc_Click(object sender, RoutedEventArgs e)
+		{
+			resultsAgeAndWeight.Clear();
+		}
 	}
 }

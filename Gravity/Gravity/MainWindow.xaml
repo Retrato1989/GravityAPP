@@ -61,7 +61,7 @@
                             <TextBox Name="txtAutorzy" Grid.Column="2" Grid.Row="1" Style="{StaticResource customTextBox}" />
                             <TextBox Name="txtDlugosc" Grid.Column="2" Grid.Row="2" Style="{StaticResource customTextBox}" />
                             <TextBox Name="txtCzas" Grid.Column="2" Grid.Row="3" Style="{StaticResource customTextBox}" />
-                            <Button	Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" Click="btnWahadloOblicz_Click"/>
+                            <Button	Name="btnWahadloOblicz" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" Click="btnWahadloOblicz_Click"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Wyniki">
@@ -75,8 +75,8 @@
                     </TabItem>
                     <TabItem Header="Ustawienia">
                         <StackPanel Orientation="Horizontal" Height="32" VerticalAlignment="Top">
-                            <CheckBox Content="Koloruj listę wyników" IsChecked="False" Width="140" Style="{StaticResource customCheckBox}"/>
-                            <Button Content="Wyczyść listę" Width="80" Style="{StaticResource customButton}" />
+                            <CheckBox Name="cbWahadloKoloruj" Content="Koloruj listę wyników" IsChecked="False" Width="140" Style="{StaticResource customCheckBox}" />
+                            <Button Name="btnWahadloWyczysc" Content="Wyczyść listę" Width="80" Style="{StaticResource customButton}" Click="btnWahadloWyczysc_Click"/>
                         </StackPanel>
                     </TabItem>
                 </TabControl>
@@ -107,12 +107,12 @@
                             <TextBox Name="txtImie" Grid.Column="2" Grid.Row="1" ToolTip="Podaj swoje imię" Style="{StaticResource customTextBox}" />
                             <TextBox Name="txtWiek" Grid.Column="2" Grid.Row="2" ToolTip="Podaj swój wiek na Ziemi" Style="{StaticResource customTextBox}" />
                             <TextBox Name="txtWaga" Grid.Column="2" Grid.Row="3" ToolTip="Podaj swoją wagę na Ziemi" Style="{StaticResource customTextBox}" />
-                            <ComboBox x:Name="cmbPlanets" Grid.Column="2" Grid.Row="4" DisplayMemberPath="PlanetName" ToolTip="Wybierz planetę Układu Słonecznego" Style="{StaticResource customComboBox}" SelectionChanged="cmbPlanets_SelectionChanged"/>
-                            <Button	Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" Click="btnWiekIWagaOblicz_Click" />
+                            <ComboBox Name="cmbPlanets" Grid.Column="2" Grid.Row="4" DisplayMemberPath="PlanetName" ToolTip="Wybierz planetę Układu Słonecznego" Style="{StaticResource customComboBox}" SelectionChanged="cmbPlanets_SelectionChanged"/>
+                            <Button	Name="btnWiekIWagaOblicz" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" Click="btnWiekIWagaOblicz_Click" />
                         </Grid>
                     </TabItem>
                     <TabItem Header="Wyniki">
-                        <DataGrid Name="gridAgeAndWeightResults" AutoGenerateColumns="False" >
+                        <DataGrid Name="gridAgeAndWeightResults" AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Imię" Binding="{Binding Name}" />
                                 <DataGridTextColumn Header="Planeta" Binding="{Binding PlanetName}" />
@@ -123,8 +123,8 @@
                     </TabItem>
                     <TabItem Header="Ustawienia">
                         <StackPanel Orientation="Horizontal" Height="32" VerticalAlignment="Top">
-                            <CheckBox Content="Koloruj listę wyników" IsChecked="False" Width="140" Style="{StaticResource customCheckBox}" />
-                            <Button Content="Wyczyść listę" Width="80" Style="{StaticResource customButton}" />
+                            <CheckBox Name="cbWiekIWagaKoloruj" Content="Koloruj listę wyników" IsChecked="False" Width="140" Style="{StaticResource customCheckBox}" />
+                            <Button Name="btnWiekIWagaWyczysc" Content="Wyczyść listę" Width="80" Style="{StaticResource customButton}" Click="btnWiekIWagaWyczysc_Click" />
                         </StackPanel>
                     </TabItem>
                 </TabControl>
