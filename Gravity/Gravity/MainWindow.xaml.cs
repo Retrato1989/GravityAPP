@@ -48,5 +48,10 @@ namespace Gravity
 			AgeAndWeight a = new AgeAndWeight(txtImie.Text, Convert.ToDouble(txtWiek.Text), Convert.ToDouble(txtWaga.Text), planet);
 			resultsAgeAndWeight.Add(a);
 		}
+
+		private void cmbPlanets_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+		{
+			planet = cmbPlanets.SelectedItem as Planet;
+		}
 	}
 }
