@@ -23,6 +23,7 @@ namespace Gravity
 			this.Weight = weight;
 			this.SelectedPlanet = planet;
 			this.PlanetName = SelectedPlanet.PlanetName;
+
 			AgeOnPlanet();
 			WeightOnPlanet();
 		}

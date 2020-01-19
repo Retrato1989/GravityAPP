@@ -12,6 +12,7 @@ namespace Gravity
 	{
 		private ObservableCollection<Pendulum> resultsPendulum = null;
 		private ObservableCollection<AgeAndWeight> resultsAgeAndWeight = null;
+		private ObservableCollection<Planet> planets = null;
 
 		Planet planet = new Planet("Szczur", 100, 16);
 
@@ -29,6 +30,11 @@ namespace Gravity
 			resultsAgeAndWeight = new ObservableCollection<AgeAndWeight>();
 			resultsAgeAndWeight.Add(new AgeAndWeight("Mietek", 12, 100, planet));
 			gridAgeAndWeightResults.ItemsSource = resultsAgeAndWeight;
+
+			planets = new ObservableCollection<Planet>();
+			planets.Add(planet);
+			planets.Add(new Planet("Gieńkowo", 3500, 8.2));
+			cmbPlanets.ItemsSource = planets;
 		}
 
 		private void btnWahadloOblicz_Click(object sender, RoutedEventArgs e)

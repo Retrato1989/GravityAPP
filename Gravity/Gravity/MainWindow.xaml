@@ -108,7 +108,7 @@
                             <TextBox Name="txtWiek" Grid.Column="2" Grid.Row="2" ToolTip="Podaj swój wiek na Ziemi" Style="{StaticResource customTextBox}" />
                             <TextBox Name="txtWaga" Grid.Column="2" Grid.Row="3" ToolTip="Podaj swoją wagę na Ziemi" Style="{StaticResource customTextBox}" />
                             <ComboBox x:Name="cmbPlanets" Grid.Column="2" Grid.Row="4" DisplayMemberPath="PlanetName" ToolTip="Wybierz planetę Układu Słonecznego" Style="{StaticResource customComboBox}" />
-                            <Button	Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" />
+                            <Button	Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" Click="btnWiekIWagaOblicz_Click" />
                         </Grid>
                     </TabItem>
                     <TabItem Header="Wyniki">
