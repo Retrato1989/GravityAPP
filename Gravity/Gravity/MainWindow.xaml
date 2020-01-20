@@ -5,54 +5,68 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gravity"
         mc:Ignorable="d"
-        Title="Układ Słoneczny" MinHeight="280" MaxHeight="600" Height="360" MinWidth="280" MaxWidth="900" Width="360">
+        Title="Układ Słoneczny" MinHeight="600" Height="800" MinWidth="600" Width="1000">
     <Grid>
         <Grid.Resources>
             <Style x:Key="customButton">
                 <Setter Property="Button.Background" Value="WhiteSmoke" />
-                <Setter Property="Button.FontWeight" Value="Bold" />
                 <Setter Property="Button.BorderThickness" Value="2" />
-                <Setter Property="Button.Height" Value="23" />
+                <Setter Property="Button.Height" Value="46" />
+                <Setter Property="Button.FontSize" Value="24" />
+                <Setter Property="Button.FontWeight" Value="Bold" />
             </Style>
             <Style x:Key="customLabel">
                 <Setter Property="Label.HorizontalContentAlignment" Value="Right" />
                 <Setter Property="Label.VerticalContentAlignment" Value="Center" />
-                <Setter Property="Label.Height" Value="26" />
+                <Setter Property="Label.Height" Value="52" />
+                <Setter Property="Label.FontSize" Value="24" />
+                <Setter Property="Label.FontWeight" Value="Bold" />
             </Style>
             <Style x:Key="customTextBox">
                 <Setter Property="TextBox.VerticalContentAlignment" Value="Center" />
                 <Setter Property="TextBox.TextAlignment" Value="Right" />
-                <Setter Property="TextBox.Height" Value="20" />
+                <Setter Property="TextBox.Height" Value="40" />
                 <Setter Property="TextBox.BorderThickness" Value="2" />
+                <Setter Property="TextBox.FontSize" Value="24" />
+                <Setter Property="TextBox.FontWeight" Value="SemiBold" />
             </Style>
             <Style x:Key="customComboBox">
                 <Setter Property="ComboBox.HorizontalContentAlignment" Value="Center" />
                 <Setter Property="ComboBox.VerticalContentAlignment" Value="Center" />
-                <Setter Property="ComboBox.Height" Value="23" />
+                <Setter Property="ComboBox.Height" Value="46" />
                 <Setter Property="ComboBox.BorderThickness" Value="2" />
+                <Setter Property="ComboBox.FontSize" Value="24" />
+                <Setter Property="ComboBox.FontWeight" Value="SemiBold" />
             </Style>
             <Style x:Key="customCheckBox">
+                <Setter Property="CheckBox.VerticalAlignment" Value="Center" />
                 <Setter Property="CheckBox.VerticalContentAlignment" Value="Center" />
                 <Setter Property="CheckBox.BorderThickness" Value="2" />
+                <Setter Property="CheckBox.FontSize" Value="24" />
+                <Setter Property="CheckBox.FontWeight" Value="Bold" />                
+            </Style>
+            <Style x:Key="customTabItem">
+                <Setter Property="TabItem.FontSize" Value="16" />
+                <Setter Property="TabItem.FontWeight" Value="Bold" />
             </Style>
         </Grid.Resources>
         <TabControl>
-            <TabItem Header="Wahadło">
+            <TabItem Header="Wahadło" Style="{StaticResource customTabItem}">
                 <TabControl TabStripPlacement="Bottom">
-                    <TabItem Header="Oblicz">
+                    <TabItem Header="Oblicz" Style="{StaticResource customTabItem}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="60" />
-                                <ColumnDefinition Width="140" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="280" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
-                                <RowDefinition Height="32" />
-                                <RowDefinition Height="32" />
-                                <RowDefinition Height="32" />
-                                <RowDefinition Height="32" />
+                                <RowDefinition Height="64" />
+                                <RowDefinition Height="64" />
+                                <RowDefinition Height="64" />
+                                <RowDefinition Height="64" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Label Content="Autorzy" Grid.Row="1" Grid.Column="1" Style="{StaticResource customLabel}" />
@@ -64,8 +78,8 @@
                             <Button	Name="btnWahadloOblicz" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" Click="btnWahadloOblicz_Click"/>
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Wyniki">
-                        <DataGrid Name="gridPendulumResults" AutoGenerateColumns="False">
+                    <TabItem Header="Wyniki" Style="{StaticResource customTabItem}">
+                        <DataGrid Name="gridPendulumResults" AutoGenerateColumns="False" IsReadOnly="True">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Autorzy" Binding="{Binding Authors}" />
                                 <DataGridTextColumn Header="Wynik" Binding="{Binding MeasuredG}" />
@@ -73,31 +87,31 @@
                             </DataGrid.Columns>
                         </DataGrid>
                     </TabItem>
-                    <TabItem Header="Ustawienia">
-                        <StackPanel Orientation="Horizontal" Height="32" VerticalAlignment="Top">
-                            <CheckBox Name="cbWahadloKoloruj" Content="Koloruj listę wyników" IsChecked="False" Width="140" Style="{StaticResource customCheckBox}" />
-                            <Button Name="btnWahadloWyczysc" Content="Wyczyść listę" Width="80" Style="{StaticResource customButton}" Click="btnWahadloWyczysc_Click"/>
+                    <TabItem Header="Ustawienia" Style="{StaticResource customTabItem}">
+                        <StackPanel Orientation="Horizontal" Height="64" VerticalAlignment="Top">
+                            <CheckBox Name="cbWahadloKoloruj" Content="Koloruj listę wyników" IsChecked="False" Width="280" Style="{StaticResource customCheckBox}" />
+                            <Button Name="btnWahadloWyczysc" Content="Wyczyść listę" Width="160" Style="{StaticResource customButton}" Click="btnWahadloWyczysc_Click"/>
                         </StackPanel>
                     </TabItem>
                 </TabControl>
             </TabItem>
-            <TabItem Header="Wiek i Waga">
+            <TabItem Header="Wiek i Waga" Style="{StaticResource customTabItem}">
                 <TabControl TabStripPlacement="Bottom">
-                    <TabItem Header="Oblicz">
+                    <TabItem Header="Oblicz" Style="{StaticResource customTabItem}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="60" />
-                                <ColumnDefinition Width="140" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="280" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
-                                <RowDefinition Height="32" />
-                                <RowDefinition Height="32" />
-                                <RowDefinition Height="32" />
-                                <RowDefinition Height="32" />
-                                <RowDefinition Height="32" />
+                                <RowDefinition Height="64" />
+                                <RowDefinition Height="64" />
+                                <RowDefinition Height="64" />
+                                <RowDefinition Height="64" />
+                                <RowDefinition Height="64" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Label Content="Imię" Grid.Row="1" Grid.Column="1" Style="{StaticResource customLabel}" />
@@ -111,8 +125,8 @@
                             <Button	Name="btnWiekIWagaOblicz" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" Click="btnWiekIWagaOblicz_Click" />
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Wyniki">
-                        <DataGrid Name="gridAgeAndWeightResults" AutoGenerateColumns="False">
+                    <TabItem Header="Wyniki" Style="{StaticResource customTabItem}">
+                        <DataGrid Name="gridAgeAndWeightResults" AutoGenerateColumns="False" IsReadOnly="True" >
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Imię" Binding="{Binding Name}" />
                                 <DataGridTextColumn Header="Planeta" Binding="{Binding PlanetName}" />
@@ -121,10 +135,10 @@
                             </DataGrid.Columns>
                         </DataGrid>
                     </TabItem>
-                    <TabItem Header="Ustawienia">
-                        <StackPanel Orientation="Horizontal" Height="32" VerticalAlignment="Top">
-                            <CheckBox Name="cbWiekIWagaKoloruj" Content="Koloruj listę wyników" IsChecked="False" Width="140" Style="{StaticResource customCheckBox}" />
-                            <Button Name="btnWiekIWagaWyczysc" Content="Wyczyść listę" Width="80" Style="{StaticResource customButton}" Click="btnWiekIWagaWyczysc_Click" />
+                    <TabItem Header="Ustawienia" Style="{StaticResource customTabItem}">
+                        <StackPanel Orientation="Horizontal" Height="64" VerticalAlignment="Top">
+                            <CheckBox Name="cbWiekIWagaKoloruj" Content="Koloruj listę wyników" IsChecked="False" Width="280" Style="{StaticResource customCheckBox}" />
+                            <Button Name="btnWiekIWagaWyczysc" Content="Wyczyść listę" Width="160" Style="{StaticResource customButton}" Click="btnWiekIWagaWyczysc_Click" />
                         </StackPanel>
                     </TabItem>
                 </TabControl>
