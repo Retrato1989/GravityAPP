@@ -76,3 +76,8 @@ namespace Gravity
 		}
 	}
 }
+// Dodać obsługę zmiany koloru tła i czcionki tabeli podczas selectionchanged
+// Dodać zliczanie liczby wyników
+// Poprawić i zetestować skrypt liczący przyspieszenie grawitacyjne
+// Dodać obsługę liczby wahnięć
+// Dodać domyślne wybory w comboboxach przy starcie
