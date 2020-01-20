@@ -28,17 +28,17 @@ namespace Gravity
 
 		private void MeasureSwingCycle()
 		{
-			this.SwingCycle = Math.Round(Math.Pow(SwingTime / 10, 2), 2);
+			this.SwingCycle = Math.Round(Math.Pow(SwingTime / 10, 2), 2); // Poprawić działanie, dodać do ustawień liczbę wahnięć
 		}
 
 		private void MeasureG()
 		{
-			this.MeasuredG = Math.Round(4 * Math.Round(Math.PI, 2) * Length / Math.Pow(SwingCycle, 2), 2);
+			this.MeasuredG = Math.Round(4 * Math.Round(Math.PI, 2) * Length / Math.Pow(SwingCycle, 2), 2); // Poprawić działanie
 		}
 
 		private void MeasureDifference()
 		{
-			this.Difference = Math.Abs(0 - (this.MeasuredG - SolarSystem.EarthG));
+			this.Difference = Math.Abs(0 - (this.MeasuredG - SolarSystem.EarthG)); // Sprawdzić działanie
 		}
 	}
 }

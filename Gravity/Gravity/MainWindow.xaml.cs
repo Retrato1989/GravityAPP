@@ -58,3 +58,5 @@ namespace Gravity
 		}
 	}
 }
+
+// Dodać liczbę wahnięć do menu
