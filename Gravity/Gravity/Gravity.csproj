@@ -58,6 +58,7 @@
     <Compile Include="AgeAndWeight.cs" />
     <Compile Include="Planet.cs" />
     <Compile Include="SolarSystem.cs" />
+    <Compile Include="TableColors.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -10,17 +10,23 @@ namespace Gravity
 	/// 
 	public partial class MainWindow : Window
 	{
+		private int SwingCount { get; set; }
+
 		private ObservableCollection<Pendulum> resultsPendulum = null;
 		private ObservableCollection<AgeAndWeight> resultsAgeAndWeight = null;
 		private Planet planet = null;
+		
 		public SolarSystem solarSystem = new SolarSystem();
+		public TableColors tableColors = new TableColors();
 
 		public MainWindow()
 		{
 			InitializeComponent();
-			PrzygotujWiazanie();
+			CreateBindings();
 		}
-		private void PrzygotujWiazanie()
+
+		
+		private void CreateBindings()
 		{
 			resultsPendulum = new ObservableCollection<Pendulum>();
 			gridPendulumResults.ItemsSource = resultsPendulum;
