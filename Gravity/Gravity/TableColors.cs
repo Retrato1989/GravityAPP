@@ -18,7 +18,7 @@ namespace Gravity
 		{
 			SolidColorBrush beige = new SolidColorBrush();
 			SolidColorBrush lavender = new SolidColorBrush();
-			SolidColorBrush lightYellow = new SolidColorBrush();
+			SolidColorBrush wheat = new SolidColorBrush();
 			SolidColorBrush lightBlue = new SolidColorBrush();
 			SolidColorBrush lightGreen = new SolidColorBrush();
 			SolidColorBrush pink = new SolidColorBrush();
@@ -30,7 +30,7 @@ namespace Gravity
 
 			beige.Color = Colors.Beige;
 			lavender.Color = Colors.Lavender;
-			lightYellow.Color = Colors.LightYellow;
+			wheat.Color = Colors.Wheat;
 			lightBlue.Color = Colors.LightSkyBlue;
 			lightGreen.Color = Colors.LightGreen;
 			pink.Color = Colors.Pink;
@@ -45,7 +45,7 @@ namespace Gravity
 				white,
 				beige,
 				lavender,
-				lightYellow,
+				wheat,
 				lightBlue,
 				lightGreen,
 				pink,
@@ -54,11 +54,11 @@ namespace Gravity
 
 			ForegroundColors = new List<SolidColorBrush>()
 			{
-				black,
+				white,
 				blue,
 				red,
 				yellow,
-				white
+				black
 			};
 		}
 	}

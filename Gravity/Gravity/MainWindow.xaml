@@ -38,6 +38,14 @@
                 <Setter Property="ComboBox.FontSize" Value="24" />
                 <Setter Property="ComboBox.FontWeight" Value="SemiBold" />
             </Style>
+            <Style x:Key="customColorComboBox">
+                <Setter Property="ComboBox.HorizontalContentAlignment" Value="Center" />
+                <Setter Property="ComboBox.VerticalContentAlignment" Value="Center" />
+                <Setter Property="ComboBox.Height" Value="46" />
+                <Setter Property="ComboBox.BorderThickness" Value="2" />
+                <Setter Property="ComboBox.FontSize" Value="24" />
+                <Setter Property="ComboBox.FontWeight" Value="SemiBold" />
+            </Style>
             <Style x:Key="customCheckBox">
                 <Setter Property="CheckBox.VerticalAlignment" Value="Center" />
                 <Setter Property="CheckBox.VerticalContentAlignment" Value="Center" />
@@ -93,13 +101,11 @@
                     <TabItem Header="Ustawienia" Style="{StaticResource customTabItem}">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="63*" />
-                                <ColumnDefinition Width="14*"/>
-                                <ColumnDefinition Width="23*"/>
+                                <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="280" />
                                 <ColumnDefinition Width="20" />
                                 <ColumnDefinition Width="280" />
-                                <ColumnDefinition Width="100*" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
@@ -115,18 +121,42 @@
                                 <RowDefinition Height="64" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
-                            <Label Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" Content="Kolory tabeli" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="3" Grid.Row="2" Content="Kolor główny" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="5" Grid.Row="2" Content="Kolor dodatkowy" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <ComboBox Name="cmbWahadloKolorTla1" Grid.Column="3" Grid.Row="3" Style="{StaticResource customComboBox}" />
-                            <ComboBox Name="cmbWahadloKolorTla2" Grid.Column="5" Grid.Row="3" Style="{StaticResource customComboBox}" />
-                            <Label Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3" Content="Kolory czcionek tabeli" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="3" Grid.Row="6" Content="Kolor główny" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="5" Grid.Row="6" Content="Kolor dodatkowy" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <ComboBox Name="cmbWahadloKolorCzcionki1" Grid.Column="3" Grid.Row="7" Style="{StaticResource customComboBox}" />
-                            <ComboBox Name="cmbWahadloKolorCzcionki2" Grid.Column="5" Grid.Row="7" Style="{StaticResource customComboBox}" />
-                            <Label Name="lblWahadloLiczbaWynikow" Grid.Column="3" Grid.Row="9" Content="Liczba wyników: 0" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Button Name="btnWahadloWyczysc" Grid.Column="5" Grid.Row="9" Content="Wyczyść listę" Style="{StaticResource customButton}" Click="btnWahadloWyczysc_Click" />
+                            <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Content="Kolory tabeli" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <Label Grid.Column="1" Grid.Row="2" Content="Kolor główny" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <Label Grid.Column="3" Grid.Row="2" Content="Kolor dodatkowy" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <ComboBox Name="cmbWahadloKolorTla1" Grid.Column="1" Grid.Row="3" Style="{StaticResource customComboBox}" >
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <ComboBox Name="cmbWahadloKolorTla2" Grid.Column="3" Grid.Row="3" Style="{StaticResource customComboBox}" >
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <Label Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Content="Kolory czcionek tabeli" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <Label Grid.Column="1" Grid.Row="6" Content="Kolor główny" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <Label Grid.Column="3" Grid.Row="6" Content="Kolor dodatkowy" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <ComboBox Name="cmbWahadloKolorCzcionki1" Grid.Column="1" Grid.Row="7" Style="{StaticResource customComboBox}" >
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <ComboBox Name="cmbWahadloKolorCzcionki2" Grid.Column="3" Grid.Row="7" Style="{StaticResource customComboBox}" >
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <Label Name="lblWahadloLiczbaWynikow" Grid.Column="1" Grid.Row="9" Content="Liczba wyników: 0" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <Button Name="btnWahadloWyczysc" Grid.Column="3" Grid.Row="9" Content="Wyczyść listę" Style="{StaticResource customButton}" Click="btnWahadloWyczysc_Click" />
                         </Grid>
                     </TabItem>
                 </TabControl>
@@ -174,12 +204,11 @@
                     <TabItem Header="Ustawienia" Style="{StaticResource customTabItem}">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="28*" />
-                                <ColumnDefinition Width="173*"/>
+                                <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="280" />
                                 <ColumnDefinition Width="20" />
                                 <ColumnDefinition Width="280" />
-                                <ColumnDefinition Width="200*" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
@@ -195,18 +224,42 @@
                                 <RowDefinition Height="64" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
-                            <Label Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3" Content="Kolory tabeli" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="2" Grid.Row="2" Content="Kolor główny" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="4" Grid.Row="2" Content="Kolor dodatkowy" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <ComboBox Name="cmbWiekIWagaKolorTla1" Grid.Column="2" Grid.Row="3" Style="{StaticResource customComboBox}" />
-                            <ComboBox Name="cmbWiekIWagaKolorTla2" Grid.Column="4" Grid.Row="3" Style="{StaticResource customComboBox}" />
-                            <Label Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="3" Content="Kolory czcionek tabeli" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="2" Grid.Row="6" Content="Kolor główny" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="4" Grid.Row="6" Content="Kolor dodatkowy" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <ComboBox Name="cmbWiekIWagaKolorCzcionki1" Grid.Column="2" Grid.Row="7" Style="{StaticResource customComboBox}" />
-                            <ComboBox Name="cmbWiekIWagaKolorCzcionki2" Grid.Column="4" Grid.Row="7" Style="{StaticResource customComboBox}" />
-                            <Label Name="lblWiekIWagaLiczbaWynikow" Grid.Column="2" Grid.Row="10" Content="Liczba wyników: 0" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Button Name="btnWiekIWagaWyczysc" Grid.Column="4" Grid.Row="10" Content="Wyczyść listę" Style="{StaticResource customButton}" Click="btnWahadloWyczysc_Click" />
+                            <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Content="Kolory tabeli" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <Label Grid.Column="1" Grid.Row="2" Content="Kolor główny" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <Label Grid.Column="3" Grid.Row="2" Content="Kolor dodatkowy" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <ComboBox Name="cmbWiekIWagaKolorTla1" Grid.Column="1" Grid.Row="3" Style="{StaticResource customComboBox}" >
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <ComboBox Name="cmbWiekIWagaKolorTla2" Grid.Column="3" Grid.Row="3" Style="{StaticResource customComboBox}" >
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <Label Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Content="Kolory czcionek tabeli" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <Label Grid.Column="1" Grid.Row="6" Content="Kolor główny" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <Label Grid.Column="3" Grid.Row="6" Content="Kolor dodatkowy" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <ComboBox Name="cmbWiekIWagaKolorCzcionki1" Grid.Column="1" Grid.Row="7" Style="{StaticResource customComboBox}" >
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <ComboBox Name="cmbWiekIWagaKolorCzcionki2" Grid.Column="3" Grid.Row="7" Style="{StaticResource customComboBox}" >
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <Label Name="lblWiekIWagaLiczbaWynikow" Grid.Column="1" Grid.Row="10" Content="Liczba wyników: 0" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                            <Button Name="btnWiekIWagaWyczysc" Grid.Column="3" Grid.Row="10" Content="Wyczyść listę" Style="{StaticResource customButton}" Click="btnWahadloWyczysc_Click" />
                         </Grid>
                     </TabItem>
                 </TabControl>
@@ -214,5 +267,3 @@
         </TabControl>
     </Grid>
 </Window>
-<!--<-->
-<!--Poprawić ustawienia i ich layout, dodać kolorowanie tabelek, dodać liczbę wahnięć-->
