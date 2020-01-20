@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace Gravity
 {
@@ -10,14 +11,13 @@ namespace Gravity
 	/// 
 	public partial class MainWindow : Window
 	{
-		private int SwingCount { get; set; }
-
 		private ObservableCollection<Pendulum> resultsPendulum = null;
 		private ObservableCollection<AgeAndWeight> resultsAgeAndWeight = null;
 		private Planet planet = null;
 		
 		public SolarSystem solarSystem = new SolarSystem();
 		public TableColors tableColors = new TableColors();
+		public List<int> swingCount = new List<int>() { 5, 10, 15, 20 };
 
 		public MainWindow()
 		{
@@ -35,6 +35,18 @@ namespace Gravity
 			gridAgeAndWeightResults.ItemsSource = resultsAgeAndWeight;
 
 			cmbPlanets.ItemsSource = solarSystem.SolarSystemPlanets;
+
+			cmbLiczbaWahniec.ItemsSource = swingCount;
+
+			cmbWahadloKolorTla1.ItemsSource = tableColors.BackgroundColors;
+			cmbWahadloKolorTla2.ItemsSource = tableColors.BackgroundColors;
+			cmbWiekIWagaKolorTla1.ItemsSource = tableColors.BackgroundColors;
+			cmbWiekIWagaKolorTla2.ItemsSource = tableColors.BackgroundColors;
+
+			cmbWahadloKolorCzcionki1.ItemsSource = tableColors.ForegroundColors;
+			cmbWahadloKolorCzcionki2.ItemsSource = tableColors.ForegroundColors;
+			cmbWiekIWagaKolorCzcionki1.ItemsSource = tableColors.ForegroundColors;
+			cmbWiekIWagaKolorCzcionki2.ItemsSource = tableColors.ForegroundColors;
 		}
 
 		private void btnWahadloOblicz_Click(object sender, RoutedEventArgs e)
