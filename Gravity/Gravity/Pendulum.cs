@@ -38,7 +38,7 @@ namespace Gravity
 
 		private void MeasureDifference()
 		{
-			this.Difference = Math.Abs(this.MeasuredG - PlanetEarth.EarthG);
+			this.Difference = Math.Abs(0 - (this.MeasuredG - SolarSystem.EarthG));
 		}
 	}
 }

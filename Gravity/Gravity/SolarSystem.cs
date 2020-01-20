@@ -2,9 +2,9 @@
 
 namespace Gravity
 {
-	public static class PlanetEarth
+	public static class SolarSystem
 	{
 		public const double EarthG = 9.80;
-		public const double YearLength = 365.26;
+		public const double EarthYearLength = 365.26;
 	}
 }

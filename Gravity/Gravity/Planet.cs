@@ -18,13 +18,13 @@ namespace Gravity
 
 		public double YearLength()
 		{
-			double yearLength = Math.Round(PlanetEarth.YearLength / OrbitalPeriod, 2);
+			double yearLength = Math.Round(SolarSystem.EarthYearLength / OrbitalPeriod, 2);
 			return yearLength;
 		}
 
 		public double CompareGravity()
 		{
-			double gravity = Math.Round(PlanetGravity / PlanetEarth.EarthG, 2);
+			double gravity = Math.Round(PlanetGravity / SolarSystem.EarthG, 2);
 			return gravity;
 		}
 	}
