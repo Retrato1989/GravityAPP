@@ -6,8 +6,8 @@ namespace Gravity
 	{
 		public string Name { get; set; }
 		public string PlanetName { get; set; }
-		public double ResultAge { get; set; }
-		public double ResultWeight { get; set; }
+		public string ResultAge { get; set; }
+		public string ResultWeight { get; set; }
 
 		double Age { get; set; }
 		double Weight { get; set; }
@@ -30,12 +30,14 @@ namespace Gravity
 
 		private void AgeOnPlanet()
 		{
-			this.ResultAge = Math.Round(SelectedPlanet.YearLength() * this.Age, 2);
+			double result = Math.Round(SelectedPlanet.YearLength() * this.Age, 2);
+			this.ResultAge = String.Format("{0:F2}", result);
 		}
 
 		private void WeightOnPlanet()
 		{
-			this.ResultWeight = Math.Round(SelectedPlanet.CompareGravity() * this.Weight, 2);
+			double result = Math.Round(SelectedPlanet.CompareGravity() * this.Weight, 2);
+			this.ResultWeight = String.Format("{0:F2} kg", result);
 		}
 	}
 }

@@ -12,9 +12,8 @@ namespace Gravity
 	{
 		private ObservableCollection<Pendulum> resultsPendulum = null;
 		private ObservableCollection<AgeAndWeight> resultsAgeAndWeight = null;
-		private ObservableCollection<Planet> planets = null;
-
-		Planet planet = new Planet("Szczur", 100, 16);
+		private Planet planet = null;
+		public SolarSystem solarSystem = new SolarSystem();
 
 		public MainWindow()
 		{
@@ -24,17 +23,12 @@ namespace Gravity
 		private void PrzygotujWiazanie()
 		{
 			resultsPendulum = new ObservableCollection<Pendulum>();
-			resultsPendulum.Add(new Pendulum("Stasiek", 30, 12));
 			gridPendulumResults.ItemsSource = resultsPendulum;
 
 			resultsAgeAndWeight = new ObservableCollection<AgeAndWeight>();
-			resultsAgeAndWeight.Add(new AgeAndWeight("Mietek", 12, 100, planet));
 			gridAgeAndWeightResults.ItemsSource = resultsAgeAndWeight;
 
-			planets = new ObservableCollection<Planet>();
-			planets.Add(planet);
-			planets.Add(new Planet("Gieńkowo", 3500, 8.2));
-			cmbPlanets.ItemsSource = planets;
+			cmbPlanets.ItemsSource = solarSystem.SolarSystemPlanets;
 		}
 
 		private void btnWahadloOblicz_Click(object sender, RoutedEventArgs e)
