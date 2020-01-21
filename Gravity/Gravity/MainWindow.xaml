@@ -65,8 +65,8 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="140" />
-                                <ColumnDefinition Width="280" />
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="240" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
@@ -79,85 +79,28 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Label Content="Autorzy" Grid.Column="1" Grid.Row="1" Style="{StaticResource customLabel}" />
-                            <Label Content="Długość" Grid.Column="1" Grid.Row="2" Style="{StaticResource customLabel}" />
-                            <Label Content="Czas" Grid.Column="1" Grid.Row="3" Style="{StaticResource customLabel}" />
+                            <Label Content="Długość (cm)" Grid.Column="1" Grid.Row="2" Style="{StaticResource customLabel}" />
+                            <Label Content="Czas (s)" Grid.Column="1" Grid.Row="3" Style="{StaticResource customLabel}" />
                             <Label Content="Wahnięcia" Grid.Column="1" Grid.Row="4" Style="{StaticResource customLabel}" />
                             <TextBox Name="txtAutorzy" Grid.Column="2" Grid.Row="1" Style="{StaticResource customTextBox}" />
                             <TextBox Name="txtDlugosc" Grid.Column="2" Grid.Row="2" Style="{StaticResource customTextBox}" />
                             <TextBox Name="txtCzas" Grid.Column="2" Grid.Row="3" Style="{StaticResource customTextBox}" />
-                            <ComboBox Name="cmbLiczbaWahniec" Grid.Column="2" Grid.Row="4" Style="{StaticResource customComboBox}" />
+                            <ComboBox Name="cmbLiczbaWahniec" Grid.Column="2" Grid.Row="4" Style="{StaticResource customComboBox}" SelectedIndex="1" SelectionChanged="CmbLiczbaWahniec_SelectionChanged" />
                             <Button	Name="btnWahadloOblicz" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" Click="btnWahadloOblicz_Click"/>
                         </Grid>
                     </TabItem>
                     <TabItem Header="Wyniki" Style="{StaticResource customTabItem}">
                         <DataGrid Name="gridPendulumResults" AutoGenerateColumns="False" IsReadOnly="True">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Autorzy" Binding="{Binding Authors}" />
-                                <DataGridTextColumn Header="Wynik" Binding="{Binding MeasuredG}" />
-                                <DataGridTextColumn Header="Różnica" Binding="{Binding Difference}" />
+                                <DataGridTextColumn Header="Autorzy" Binding="{Binding Authors}" Width="150" />
+                                <DataGridTextColumn Header="Długość" Binding="{Binding Length}" Width="100" />
+                                <DataGridTextColumn Header="Czas" Binding="{Binding Time}" Width="100" />
+                                <DataGridTextColumn Header="Długość pomiaru" Binding="{Binding Swings}" Width="150" />
+                                <DataGridTextColumn Header="Wynik" Binding="{Binding MeasuredG}" Width="150" />
+                                <DataGridTextColumn Header="Ziemskie g" Binding="{Binding EarthG}" Width="150" />
+                                <DataGridTextColumn Header="Różnica" Binding="{Binding SwingDifference}" Width="150" />
                             </DataGrid.Columns>
                         </DataGrid>
-                    </TabItem>
-                    <TabItem Header="Ustawienia" Style="{StaticResource customTabItem}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="280" />
-                                <ColumnDefinition Width="20" />
-                                <ColumnDefinition Width="280" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Content="Kolory tabeli" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="1" Grid.Row="2" Content="Kolor główny" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="3" Grid.Row="2" Content="Kolor dodatkowy" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <ComboBox Name="cmbWahadloKolorTla1" Grid.Column="1" Grid.Row="3" Style="{StaticResource customComboBox}" >
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                            <ComboBox Name="cmbWahadloKolorTla2" Grid.Column="3" Grid.Row="3" Style="{StaticResource customComboBox}" >
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                            <Label Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Content="Kolory czcionek tabeli" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="1" Grid.Row="6" Content="Kolor główny" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="3" Grid.Row="6" Content="Kolor dodatkowy" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <ComboBox Name="cmbWahadloKolorCzcionki1" Grid.Column="1" Grid.Row="7" Style="{StaticResource customComboBox}" >
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                            <ComboBox Name="cmbWahadloKolorCzcionki2" Grid.Column="3" Grid.Row="7" Style="{StaticResource customComboBox}" >
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                            <Label Name="lblWahadloLiczbaWynikow" Grid.Column="1" Grid.Row="9" Content="Liczba wyników: 0" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Button Name="btnWahadloWyczysc" Grid.Column="3" Grid.Row="9" Content="Wyczyść listę" Style="{StaticResource customButton}" Click="btnWahadloWyczysc_Click" />
-                        </Grid>
                     </TabItem>
                 </TabControl>
             </TabItem>
@@ -167,8 +110,8 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="140" />
-                                <ColumnDefinition Width="280" />
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="240" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
@@ -182,87 +125,72 @@
                             </Grid.RowDefinitions>
                             <Label Content="Imię" Grid.Column="1" Grid.Row="1" Style="{StaticResource customLabel}" />
                             <Label Content="Wiek" Grid.Column="1" Grid.Row="2" Style="{StaticResource customLabel}" />
-                            <Label Content="Waga" Grid.Column="1" Grid.Row="3" Style="{StaticResource customLabel}" />
+                            <Label Content="Waga (kg)" Grid.Column="1" Grid.Row="3" Style="{StaticResource customLabel}" />
                             <Label Content="Planeta" Grid.Column="1" Grid.Row="4" Style="{StaticResource customLabel}" />
                             <TextBox Name="txtImie" Grid.Column="2" Grid.Row="1" ToolTip="Podaj swoje imię" Style="{StaticResource customTextBox}" />
                             <TextBox Name="txtWiek" Grid.Column="2" Grid.Row="2" ToolTip="Podaj swój wiek na Ziemi" Style="{StaticResource customTextBox}" />
                             <TextBox Name="txtWaga" Grid.Column="2" Grid.Row="3" ToolTip="Podaj swoją wagę na Ziemi" Style="{StaticResource customTextBox}" />
-                            <ComboBox Name="cmbPlanets" Grid.Column="2" Grid.Row="4" DisplayMemberPath="PlanetName" ToolTip="Wybierz planetę Układu Słonecznego" Style="{StaticResource customComboBox}" SelectionChanged="cmbPlanets_SelectionChanged"/>
+                            <ComboBox Name="cmbPlanets" Grid.Column="2" Grid.Row="4" DisplayMemberPath="PlanetName" ToolTip="Wybierz planetę Układu Słonecznego" Style="{StaticResource customComboBox}" SelectedIndex="2" SelectionChanged="cmbPlanets_SelectionChanged"/>
                             <Button	Name="btnWiekIWagaOblicz" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Content="Oblicz" ToolTip="Oblicz swój wiek i wagę" Style="{StaticResource customButton}" Click="btnWiekIWagaOblicz_Click" />
                         </Grid>
                     </TabItem>
                     <TabItem Header="Wyniki" Style="{StaticResource customTabItem}">
-                        <DataGrid Name="gridAgeAndWeightResults" AutoGenerateColumns="False" IsReadOnly="True" >
+                        <DataGrid Name="gridAgeAndWeightResults" AutoGenerateColumns="False" IsReadOnly="True" AlternationCount="2">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Imię" Binding="{Binding Name}" />
-                                <DataGridTextColumn Header="Planeta" Binding="{Binding PlanetName}" />
-                                <DataGridTextColumn Header="Wiek" Binding="{Binding ResultAge}" />
-                                <DataGridTextColumn Header="Waga" Binding="{Binding ResultWeight}" />
+                                <DataGridTextColumn Header="Imię" Binding="{Binding Name}" Width="150" />
+                                <DataGridTextColumn Header="Wiek ziemski" Binding="{Binding AgeOnEarth}" Width="150" />
+                                <DataGridTextColumn Header="Waga ziemska" Binding="{Binding WeightOnEarth}" Width="150" />
+                                <DataGridTextColumn Header="Planeta" Binding="{Binding PlanetName}" Width="150" />
+                                <DataGridTextColumn Header="Wiek" Binding="{Binding ResultAge}" Width="150" />
+                                <DataGridTextColumn Header="Waga" Binding="{Binding ResultWeight}" Width="150" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </TabItem>
-                    <TabItem Header="Ustawienia" Style="{StaticResource customTabItem}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="280" />
-                                <ColumnDefinition Width="20" />
-                                <ColumnDefinition Width="280" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="64" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Content="Kolory tabeli" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="1" Grid.Row="2" Content="Kolor główny" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="3" Grid.Row="2" Content="Kolor dodatkowy" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <ComboBox Name="cmbWiekIWagaKolorTla1" Grid.Column="1" Grid.Row="3" Style="{StaticResource customComboBox}" >
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                            <ComboBox Name="cmbWiekIWagaKolorTla2" Grid.Column="3" Grid.Row="3" Style="{StaticResource customComboBox}" >
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                            <Label Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Content="Kolory czcionek tabeli" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="1" Grid.Row="6" Content="Kolor główny" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Label Grid.Column="3" Grid.Row="6" Content="Kolor dodatkowy" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <ComboBox Name="cmbWiekIWagaKolorCzcionki1" Grid.Column="1" Grid.Row="7" Style="{StaticResource customComboBox}" >
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                            <ComboBox Name="cmbWiekIWagaKolorCzcionki2" Grid.Column="3" Grid.Row="7" Style="{StaticResource customComboBox}" >
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Rectangle Height="36" Width="260" Fill="{Binding}" />
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                            <Label Name="lblWiekIWagaLiczbaWynikow" Grid.Column="1" Grid.Row="10" Content="Liczba wyników: 0" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
-                            <Button Name="btnWiekIWagaWyczysc" Grid.Column="3" Grid.Row="10" Content="Wyczyść listę" Style="{StaticResource customButton}" Click="btnWahadloWyczysc_Click" />
-                        </Grid>
-                    </TabItem>
                 </TabControl>
+            </TabItem>
+            <TabItem Header="Ustawienia" Style="{StaticResource customTabItem}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="280" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="280" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="64" />
+                        <RowDefinition Height="64" />
+                        <RowDefinition Height="64" />
+                        <RowDefinition Height="64" />
+                        <RowDefinition Height="64" />
+                        <RowDefinition Height="64" />
+                        <RowDefinition Height="64" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Content="Kolory tabeli" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                    <Label Grid.Column="1" Grid.Row="2" Content="Kolor główny" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                    <Label Grid.Column="1" Grid.Row="3" Content="Kolor dodatkowy" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                    <ComboBox Name="cmbKolorTla1" Grid.Column="3" Grid.Row="2" Style="{StaticResource customComboBox}" SelectedIndex="1" SelectionChanged="CmbKolorTla1_SelectionChanged">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <Rectangle Height="36" Width="260" Fill="{Binding}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <ComboBox Name="cmbKolorTla2" Grid.Column="3" Grid.Row="3" Style="{StaticResource customComboBox}" SelectedIndex="2" SelectionChanged="CmbKolorTla2_SelectionChanged">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <Rectangle Height="36" Width="260" Fill="{Binding}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <Label Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Content="Liczba wyników" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                    <Label Name="lblWahadloLiczbaWynikow" Grid.Column="1" Grid.Row="6" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                    <Label Name="lblWiekIWagaLiczbaWynikow" Grid.Column="1" Grid.Row="7" Style="{StaticResource customLabel}" HorizontalAlignment="Center" />
+                    <Button Name="btnWahadloWyczysc" Grid.Column="3" Grid.Row="6" Content="Wyczyść listę" Style="{StaticResource customButton}" Click="btnWahadloWyczysc_Click" />
+                    <Button Name="btnWiekIWagaWyczysc" Grid.Column="3" Grid.Row="7" Content="Wyczyść listę" Style="{StaticResource customButton}" Click="btnWiekIWagaWyczysc_Click" />
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
