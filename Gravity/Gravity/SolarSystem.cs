@@ -5,7 +5,7 @@ namespace Gravity
 {
 	public class SolarSystem
 	{
-		public const double EarthG = 9.80;
+		public const double EarthG = 9.80665;
 		public const double EarthYearLength = 365.26;
 
 		public List<Planet> SolarSystemPlanets = new List<Planet>
