@@ -8,11 +8,11 @@ using System.Windows;
 // zestaw atrybutów. Zmień wartości tych atrybutów, aby zmodyfikować informacje
 // powiązane z zestawem.
 [assembly: AssemblyTitle("Gravity")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Aplikacja edukacyjna autorstwa Retrato1989. Umożliwia obliczanie przyspieszenia grawitacyjnego Ziemi za pomocą wahadła matematycznego, oraz obliczenia naszej wagi i wieku na innych planetach Układu Słonecznego.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("BraciaB89")]
 [assembly: AssemblyProduct("Gravity")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCopyright("Copyright BraciaB89 ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -53,3 +53,4 @@ using System.Windows;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: NeutralResourcesLanguage("pl-PL")]
