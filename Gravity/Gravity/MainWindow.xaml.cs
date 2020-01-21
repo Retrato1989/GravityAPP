@@ -115,5 +115,3 @@ namespace Gravity
 		}
 	}
 }
-// Ustawić formatowanie tabelek w wynikach
-// Dodać tooltipy
