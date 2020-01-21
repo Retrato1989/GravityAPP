@@ -4,10 +4,9 @@ using System.Windows.Media;
 
 namespace Gravity
 {
-    public class TableColors
-    {
-        public List<SolidColorBrush> BackgroundColors = null;
-        public List<SolidColorBrush> ForegroundColors = null;
+	public class TableColors
+	{
+		public List<SolidColorBrush> BackgroundColors = null;
 
 		public TableColors()
 		{
@@ -48,17 +47,7 @@ namespace Gravity
 				wheat,
 				lightBlue,
 				lightGreen,
-				pink,
-				black
-			};
-
-			ForegroundColors = new List<SolidColorBrush>()
-			{
-				white,
-				blue,
-				red,
-				yellow,
-				black
+				pink
 			};
 		}
 	}
