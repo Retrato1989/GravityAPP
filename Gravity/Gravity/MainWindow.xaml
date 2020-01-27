@@ -1,11 +1,11 @@
-﻿<Window x:Class="Gravity.MainWindow"
+<Window x:Class="Gravity.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gravity"
         mc:Ignorable="d"
-        Title="Układ Słoneczny" MinHeight="600" Height="800" MinWidth="600" Width="1000">
+        Title="Układ Słoneczny" MinHeight="600" Height="700" MinWidth="600" Width="1000">
     <Grid>
         <Grid.Resources>
             <Style x:Key="customButton">
@@ -90,15 +90,15 @@
                         </Grid>
                     </TabItem>
                     <TabItem Header="Wyniki" Style="{StaticResource customTabItem}">
-                        <DataGrid Name="gridPendulumResults" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid Name="gridPendulumResults" AutoGenerateColumns="False" IsReadOnly="True" AlternationCount="2" RowHeight="58" FontSize="40">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Autorzy" Binding="{Binding Authors}" Width="150" />
-                                <DataGridTextColumn Header="Długość" Binding="{Binding Length}" Width="100" />
-                                <DataGridTextColumn Header="Czas" Binding="{Binding Time}" Width="100" />
-                                <DataGridTextColumn Header="Długość pomiaru" Binding="{Binding Swings}" Width="150" />
-                                <DataGridTextColumn Header="Wynik" Binding="{Binding MeasuredG}" Width="150" />
-                                <DataGridTextColumn Header="Ziemskie g" Binding="{Binding EarthG}" Width="150" />
-                                <DataGridTextColumn Header="Różnica" Binding="{Binding SwingDifference}" Width="150" />
+                                <DataGridTextColumn Header="Autorzy" Binding="{Binding Authors}" Width="450" />
+                                <DataGridTextColumn Header="Długość" Binding="{Binding Length}" Width="200" />
+                                <DataGridTextColumn Header="Czas" Binding="{Binding Time}" Width="150" />
+                                <DataGridTextColumn Header="Długość pomiaru" Binding="{Binding Swings}" Width="350" />
+                                <DataGridTextColumn Header="Wynik" Binding="{Binding MeasuredG}" Width="250" />
+                                <DataGridTextColumn Header="Ziemskie g" Binding="{Binding EarthG}" Width="300" />
+                                <DataGridTextColumn Header="Różnica" Binding="{Binding SwingDifference}" Width="200" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </TabItem>
@@ -135,14 +135,14 @@
                         </Grid>
                     </TabItem>
                     <TabItem Header="Wyniki" Style="{StaticResource customTabItem}">
-                        <DataGrid Name="gridAgeAndWeightResults" AutoGenerateColumns="False" IsReadOnly="True" AlternationCount="2">
+                        <DataGrid Name="gridAgeAndWeightResults" AutoGenerateColumns="False" IsReadOnly="True" AlternationCount="2" RowHeight="58" FontSize="40">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Imię" Binding="{Binding Name}" Width="150" />
-                                <DataGridTextColumn Header="Wiek ziemski" Binding="{Binding AgeOnEarth}" Width="150" />
-                                <DataGridTextColumn Header="Waga ziemska" Binding="{Binding WeightOnEarth}" Width="150" />
-                                <DataGridTextColumn Header="Planeta" Binding="{Binding PlanetName}" Width="150" />
-                                <DataGridTextColumn Header="Wiek" Binding="{Binding ResultAge}" Width="150" />
-                                <DataGridTextColumn Header="Waga" Binding="{Binding ResultWeight}" Width="150" />
+                                <DataGridTextColumn Header="Imię" Binding="{Binding Name}" Width="450" />
+                                <DataGridTextColumn Header="Wiek ziemski" Binding="{Binding AgeOnEarth}" Width="300" />
+                                <DataGridTextColumn Header="Waga ziemska" Binding="{Binding WeightOnEarth}" Width="300" />
+                                <DataGridTextColumn Header="Planeta" Binding="{Binding PlanetName}" Width="250" />
+                                <DataGridTextColumn Header="Wiek" Binding="{Binding ResultAge}" Width="250" />
+                                <DataGridTextColumn Header="Waga" Binding="{Binding ResultWeight}" Width="250" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </TabItem>
