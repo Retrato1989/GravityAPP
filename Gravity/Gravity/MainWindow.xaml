@@ -125,7 +125,7 @@
                             </Grid.RowDefinitions>
                             <Label Content="Imię" Grid.Column="1" Grid.Row="1" Style="{StaticResource customLabel}" />
                             <Label Content="Wiek" Grid.Column="1" Grid.Row="2" Style="{StaticResource customLabel}" />
-                            <Label Content="Waga (kg)" Grid.Column="1" Grid.Row="3" Style="{StaticResource customLabel}" />
+                            <Label Content="Masa (kg)" Grid.Column="1" Grid.Row="3" Style="{StaticResource customLabel}" />
                             <Label Content="Planeta" Grid.Column="1" Grid.Row="4" Style="{StaticResource customLabel}" />
                             <TextBox Name="txtImie" Grid.Column="2" Grid.Row="1" ToolTip="Podaj swoje imię" Style="{StaticResource customTextBox}" />
                             <TextBox Name="txtWiek" Grid.Column="2" Grid.Row="2" ToolTip="Podaj swój wiek na Ziemi" Style="{StaticResource customTextBox}" />
@@ -139,10 +139,10 @@
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Imię" Binding="{Binding Name}" Width="450" />
                                 <DataGridTextColumn Header="Wiek ziemski" Binding="{Binding AgeOnEarth}" Width="300" />
-                                <DataGridTextColumn Header="Waga ziemska" Binding="{Binding WeightOnEarth}" Width="300" />
+                                <DataGridTextColumn Header="Masa" Binding="{Binding WeightOnEarth}" Width="300" />
                                 <DataGridTextColumn Header="Planeta" Binding="{Binding PlanetName}" Width="250" />
                                 <DataGridTextColumn Header="Wiek" Binding="{Binding ResultAge}" Width="250" />
-                                <DataGridTextColumn Header="Waga" Binding="{Binding ResultWeight}" Width="250" />
+                                <DataGridTextColumn Header="Wskazanie wagi" Binding="{Binding ResultWeight}" Width="350" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </TabItem>
