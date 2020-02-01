@@ -12,7 +12,7 @@ namespace Gravity
 		{
 			new Planet("Merkury", 87.29, 3.70),
 			new Planet("Wenus", 224.70, 8.87),
-			new Planet("Ziemia", 365.26, 9.80),
+			new Planet("Ziemia", EarthYearLength, EarthG),
 			new Planet("Mars", 686.68, 3.71),
 			new Planet("Jowisz", 4328.98, 24.79),
 			new Planet("Saturn", 10760.55, 10.44),

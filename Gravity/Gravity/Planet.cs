@@ -27,5 +27,11 @@ namespace Gravity
 			double gravity = Math.Round(PlanetGravity / SolarSystem.EarthG, 2);
 			return gravity;
 		}
+
+		public double CalculateWeight()
+		{
+			double gForce = PlanetGravity;
+			return gForce;
+		}
 	}
 }
