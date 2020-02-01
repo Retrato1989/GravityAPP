@@ -139,11 +139,11 @@
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Imię" Binding="{Binding Name}" Width="250" />
                                 <DataGridTextColumn Header="Planeta" Binding="{Binding PlanetName}" Width="250" />
-                                <DataGridTextColumn Header="Wiek" Binding="{Binding AgeOnEarth}" Width="250" />
+                                <DataGridTextColumn Header="Wiek" Binding="{Binding AgeOnEarth}" Width="200" />
                                 <DataGridTextColumn Header="Obliczony wiek" Binding="{Binding ResultAge}" Width="300" />
                                 <DataGridTextColumn Header="Masa" Binding="{Binding ResultMass}" Width="200" />
-                                <DataGridTextColumn Header="Ciężar na Ziemi" Binding="{Binding WeightOnEarth}" Width="300" />
-                                <DataGridTextColumn Header="Obliczony ciężar" Binding="{Binding ResultWeight}" Width="350" />                                
+                            	<DataGridTextColumn Header="Wskazanie wagi" Binding="{Binding ComparedWeight}" Width="350" />
+                                <DataGridTextColumn Header="Obliczony ciężar" Binding="{Binding ResultWeight}" Width="350" />								                        	
                             </DataGrid.Columns>
                         </DataGrid>
                     </TabItem>

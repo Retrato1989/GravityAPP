@@ -10,7 +10,7 @@ namespace Gravity
 		public string ResultAge { get; set; }
 		public string ResultWeight { get; set; }
 		public string AgeOnEarth { get; set; }
-		public string WeightOnEarth { get; set; }
+		public string ComparedWeight { get; set; }
 
 		double Age { get; set; }
 		double Mass { get; set; }
@@ -28,7 +28,7 @@ namespace Gravity
 			this.Mass = mass;
 			this.AgeOnEarth = String.Format("{0:F2}", years);
 			this.ResultMass = String.Format("{0:F2} kg", mass);
-			this.WeightOnEarth = String.Format("{0:F2} N", mass * SolarSystem.EarthG);
+			this.ComparedWeight = String.Format("{0:F2} kg", mass * planet.CompareGravity());
 			this.SelectedPlanet = planet;
 			this.PlanetName = SelectedPlanet.PlanetName;
 
